@@ -3,13 +3,21 @@ import 'package:meta/meta.dart';
 
 @immutable
 abstract class NumberTriviaEvent extends Equatable {
-  NumberTriviaEvent([List props = const <dynamic>[]]) : super(props);
+  final List<dynamic> properties;
+  NumberTriviaEvent([this.properties]);
+  @override
+  // TODO: implement props
+  List<Object> get props => [properties];
 }
 
 class GetTriviaForConcreteNumber extends NumberTriviaEvent {
   final String numberString;
 
-  GetTriviaForConcreteNumber(this.numberString) : super([numberString]);
+  GetTriviaForConcreteNumber(this.numberString);
+
+  @override
+  // TODO: implement props
+  List<Object> get props => [numberString];
 }
 
 class GetTriviaForRandomNumber extends NumberTriviaEvent {}

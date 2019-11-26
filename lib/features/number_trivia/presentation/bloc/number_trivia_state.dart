@@ -4,7 +4,11 @@ import 'package:meta/meta.dart';
 
 @immutable
 abstract class NumberTriviaState extends Equatable {
-  NumberTriviaState([List props = const <dynamic>[]]) : super(props);
+  final List<dynamic> properties;
+  NumberTriviaState([this.properties]);
+  @override
+  // TODO: implement props
+  List<Object> get props => [properties];
 }
 
 class Empty extends NumberTriviaState {}
